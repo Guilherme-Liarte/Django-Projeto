@@ -1,0 +1,129 @@
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: flex-start; /* Para começar o conteúdo do topo */
+    align-items: flex-start; /* Para manter o conteúdo no topo */
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%; /* Assegura que a altura será 100% da tela */
+}
+
+/* Cabeçalhos */
+h1, h2 {
+    text-align: center;
+    color: #333; /* Cor escura para boa visibilidade */
+    width: 100%;
+    margin: 0 0 20px 0; /* Margem inferior para separar os cabeçalhos */
+    font-weight: bold; /* Deixa os cabeçalhos mais fortes */
+}
+
+h1 {
+    font-size: 2rem; /* Tamanho maior para o título */
+}
+
+h2 {
+    font-size: 1.5rem; /* Tamanho um pouco menor para o subtítulo */
+    margin-bottom: 40px; /* Espaço entre o subtítulo e o conteúdo */
+}
+
+/* Contêiner do conteúdo */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Contêiner das opções de voto */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap; /* Para quebrar linha se necessário */
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 100%;
+}
+
+/* Estilo do card de cada time */
+.card {
+    width: 180px; /* Largura reduzida dos cards */
+    height: 250px; /* Altura reduzida dos cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background: white;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo das imagens dos times */
+.team-logo {
+    width: 100px; /* Tamanho reduzido da imagem */
+    height: 100px; /* Mantém a proporção */
+    object-fit: contain; /* Garante que a imagem não estoure */
+    margin-bottom: 1rem;
+}
+
+/* Estilo do texto dos nomes dos times */
+.card p {
+    font-size: 1rem; /* Tamanho reduzido do texto */
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo do botão de envio */
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 40px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: 350px;
+    margin: 40px auto;
+    font-weight: bold;
+}
+
+/* Efeito de hover para o botão */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .card {
+        width: 150px; /* Ajusta a largura dos cards */
+        height: auto; /* Ajusta a altura para que o conteúdo se encaixe */
+    }
+
+    .team-logo {
+        width: 80px; /* Ajusta o tamanho da imagem */
+        height: 80px;
+    }
+
+    button {
+        width: 90%;
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,30 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{% static 'vota_time/css/votar.css'%}">
+</head>
+<body>
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">CADASTRE-SE PARA VOTAR :</span>
+        </div>
+      </nav>    
+      <div class="container">
+        <form action="{% url 'votar' %}" method="post">
+          {% csrf_token %}
+          <input type="text" name="nome" placeholder="Digite seu nome" required>
+          <input type="number" name="idade" placeholder="Ponha sua idade" required>
+          <input type="submit" value="Cadastrar e Votar">
+      </form>
+      {% if mensagem %}
+      <p style="color: red;">{{ mensagem }}</p>
+      {% endif %}
+    </div>
+
+</body>
+</html>

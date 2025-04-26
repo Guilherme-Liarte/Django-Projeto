@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cal+Sans&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    background-image: url("../imagens/imagem.futebol.jpg");
+    background-size: cover;         /* Faz a imagem cobrir toda a tela */
+    background-repeat: no-repeat;   /* Evita repetir a imagem */
+    background-position: center;    /* Centraliza a imagem */
+    background-attachment: fixed;   /* Mantém a imagem fixa ao rolar */
+}
+
+h1{
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    font-weight: 400 !important;
+    
+}
+
+input[type="text"]{
+
+    width: 300px; /* Define uma largura maior */
+    height: 40px; /* Define altura maior */
+    font-size: 18px;
+    background-color: rgb(1, 54, 1);
+    text-align: center;
+    accent-color: aqua;
+    margin-top: -50px;
+    border: 2px solid rgb(82, 255, 2);
+    border-radius: 10px; 
+}
+::placeholder{
+    color: rgb(75, 138, 12);
+    
+}
+input{
+    color:chartreuse;
+}
+
+.container{
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+.navbar {
+    
+    background-color: aqua; 
+    padding: 15px; 
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    font-weight: 400 !important;
+    font-size: 40px;
+     
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 40px;
+    transition: width 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+input[type="text"]:focus {
+    width: 300px; /* Aumenta ao clicar */
+}
+
+h2{
+    color: #000000;
+    font-family: "Anton", sans-serif;
+    font-weight: 400 !important;
+    font-size: 30px;
+    margin-bottom: 15px;
+
+}
+
+input[type="submit"] {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza os elementos */
+    gap: 15px; /* Adiciona espaço entre os campos */
+}

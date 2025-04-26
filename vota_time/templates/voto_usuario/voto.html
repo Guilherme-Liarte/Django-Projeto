@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação - Campeonato Brasileiro</title>
+    <link rel="stylesheet" href="{% static 'vota_time/css/votacao.css' %}">
+</head>
+<body>
+    
+<div class="container">
+
+    <h1>Bem-vindo, {{ nome_usuario }}</h1>
+
+    <h2>Escolha qual time você acha que irá ganhar o Campeonato Brasileiro:</h2>
+
+    <form method="post" action="{% url 'votacao' id_usuario=id_usuario %}">
+    {% csrf_token %}
+    <input type="hidden" name="nome_usuario" value="{{ nome_usuario }}">
+    <input type="hidden" name="id_usuario" value="{{ id_usuario }}">
+        
+        <div class="radio-group">
+            <div class="card">
+                <label>
+                    <input type="radio" name="time" value="Atlético Mineiro"required>
+                    <img src="{% static 'vota_time/imagens/Galo.png' %}" alt="Atlético Mineiro" class="team-logo">
+                    <p>Atlético Mineiro</p>
+                </label>
+            </div>
+
+            <div class="card">
+                <label>
+                    <input type="radio" name="time" value="Bahia"required>
+                    <img src="{% static 'vota_time/imagens/Bahia.png' %}" alt="Bahia" class="team-logo">
+                    <p>Bahia</p>
+                </label>
+            </div>
+
+            <div class="card">
+                <label>
+                    <input type="radio" name="time" value="Botafogo"required>
+                    <img src="{% static 'vota_time/imagens/Botafogo.png' %}" alt="Botafogo" class="team-logo">
+                    <p>Botafogo</p>
+                </label>
+            </div>
+
+            <div class="card">
+                <label>
+                    <input type="radio" name="time" value="Corinthians"required>
+                    <img src="{% static 'vota_time/imagens/Corinthians.png' %}" alt="Corinthians" class="team-logo">
+                    <p>Corinthians</p>
+                </label>
+            </div>
+
+            <div class="card">
+                <label>
+                    <input type="radio" name="time" value="Flamengo"required>
+                    <img src="{% static 'vota_time/imagens/Flamengo.png' %}" alt="Flamengo" class="team-logo">
+                    <p>Flamengo</p>
+                </label>
+            </div>
+
+            <div class="card">
+                <label>
+                    <input type="radio" name="time" value="Fluminense"required>
+                    <img src="{% static 'vota_time/imagens/Fluminense.png' %}" alt="Fluminense" class="team-logo">
+                    <p>Fluminense</p>
+                </label>
+            </div>
+
+            <div class="card">
+                <label>
+                    <input type="radio" name="time" value="Internacional"required>
+                    <img src="{% static 'vota_time/imagens/Internacional.png' %}" alt="Internacional" class="team-logo">
+                    <p>Internacional</p>
+                </label>
+            </div>
+
+            <div class="card">
+                <label>
+                    <input type="radio" name="time" value="Palmeiras"required>
+                    <img src="{% static 'vota_time/imagens/Palmeiras.png' %}" alt="Palmeiras" class="team-logo">
+                    <p>Palmeiras</p>
+                </label>
+            </div>
+
+            <div class="card">
+                <label>
+                    <input type="radio" name="time" value="São Paulo"required>
+                    <img src="{% static 'vota_time/imagens/São_Paulo.png' %}" alt="São Paulo" class="team-logo">
+                    <p>São Paulo</p>
+                </label>
+            </div>
+        </div>
+
+        <button type="submit">Votar</button>
+        {% if mensagem %}
+        <h2 style="color: green; margin-top: 20px;">{{ mensagem }}</h2>
+        {% endif %}
+    </form>
+    
+</div>
+
+</body>
+</html>
